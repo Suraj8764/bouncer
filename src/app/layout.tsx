@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Syne } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import PWAInstallPrompt from "@/components/PWAInstallPrompt";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,6 +27,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "BOUNCE — Premium Event Security & VIP Bouncer Booking PWA",
   description: "Elite concierge security, certified VIP escorts, and vetted bouncers for weddings, galas, and private events in Bhadrak & Odisha.",
+  applicationName: "BOUNCE",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -33,8 +35,16 @@ export const metadata: Metadata = {
     title: "BOUNCE",
   },
   icons: {
-    icon: "/icons/icon-192x192.png",
-    apple: "/icons/icon-192x192.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
   },
 };
 
@@ -60,6 +70,7 @@ export default function RootLayout({
         <SmoothScroll>
           {children}
         </SmoothScroll>
+        <PWAInstallPrompt />
         <script
           dangerouslySetInnerHTML={{
             __html: `

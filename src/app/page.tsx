@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
@@ -413,6 +414,104 @@ export default function HomePage() {
                 >
                   Instant Reserve
                 </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Mobile App & PWA Installation Showcase Section */}
+          <section className="relative w-full bg-surface-container-lowest py-space-xl px-margin border-t border-outline-variant/15 overflow-hidden">
+            <div className="max-w-[1280px] mx-auto relative z-10">
+              <div className="relative rounded-3xl bg-gradient-to-br from-surface-container-high/90 via-surface-container/70 to-surface-container-lowest p-space-lg sm:p-space-xl border border-primary/25 shadow-2xl overflow-hidden hud-corner-tl hud-corner-br">
+                
+                {/* Tactical ambient glow effects */}
+                <div className="absolute -top-32 -right-32 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none" />
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center relative z-10">
+                  
+                  {/* Left Column: App Icon Display & Badge */}
+                  <div className="lg:col-span-5 flex flex-col sm:flex-row items-center gap-space-md justify-center lg:justify-start">
+                    <div className="relative group">
+                      {/* Glow ring */}
+                      <div className="absolute -inset-2 bg-gradient-to-r from-primary to-amber-500 rounded-3xl blur-md opacity-40 group-hover:opacity-75 transition-opacity duration-300"></div>
+                      <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-3xl overflow-hidden border-2 border-primary/60 shadow-2xl bg-surface-container-lowest flex items-center justify-center">
+                        <Image
+                          src="/icons/icon-512x512.png"
+                          alt="BOUNCE Official Mobile Application Logo"
+                          width={144}
+                          height={144}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          priority
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col text-center sm:text-left gap-1">
+                      <span className="font-headline-md text-lg sm:text-xl font-bold text-on-surface uppercase tracking-tight">
+                        BOUNCE Mobile App
+                      </span>
+                      <span className="font-label-sm text-xs text-primary font-mono tracking-wider">
+                        PWA v1.0 • STANDALONE APP
+                      </span>
+                      <div className="flex items-center justify-center sm:justify-start gap-1 text-outline font-mono text-[11px] mt-1">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                        <span>OFFLINE READY • ZERO APP STORE NEEDED</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column: Features & Install Quick Guide */}
+                  <div className="lg:col-span-7 flex flex-col gap-space-md">
+                    <div className="flex flex-col gap-1">
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-mono text-[10px] tracking-wider uppercase border border-primary/30 w-fit">
+                        <span className="material-symbols-outlined text-[14px]">install_mobile</span>
+                        <span>PROGRESSIVE WEB APPLICATION</span>
+                      </div>
+                      <h3 className="font-headline-lg text-xl sm:text-2xl font-bold text-on-surface tracking-tight mt-1">
+                        Install BOUNCE Directly on Your Smartphone
+                      </h3>
+                      <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                        Add BOUNCE to your home screen for instantaneous access, offline viewing of your booked officer passes, live GPS tracking, and priority emergency dispatch hotline access.
+                      </p>
+                    </div>
+
+                    {/* Features Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div className="flex items-start gap-3 p-3 rounded-xl bg-surface-container-lowest/80 border border-white/5">
+                        <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center text-primary shrink-0">
+                          <span className="material-symbols-outlined text-[18px]">bolt</span>
+                        </div>
+                        <div>
+                          <h4 className="font-headline-sm text-xs font-bold text-on-surface uppercase">Instant Launch</h4>
+                          <p className="font-body-sm text-[11px] text-outline">Opens instantly from your home screen like any native iOS or Android app.</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3 p-3 rounded-xl bg-surface-container-lowest/80 border border-white/5">
+                        <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
+                          <span className="material-symbols-outlined text-[18px]">wifi_off</span>
+                        </div>
+                        <div>
+                          <h4 className="font-headline-sm text-xs font-bold text-on-surface uppercase">Offline Ticket Access</h4>
+                          <p className="font-body-sm text-[11px] text-outline">Access your confirmed security booking tickets even without cellular network.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Quick Instruction Tabs */}
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-2 border-t border-white/5">
+                      <div className="text-xs text-outline flex items-center gap-2">
+                        <span className="material-symbols-outlined text-primary text-[18px]">touch_app</span>
+                        <span><strong>Android:</strong> Tap <em>&ldquo;Install&rdquo;</em> in the bottom prompt or browser menu.</span>
+                      </div>
+                      <div className="text-xs text-outline flex items-center gap-2">
+                        <span className="material-symbols-outlined text-primary text-[18px]">ios_share</span>
+                        <span><strong>iPhone:</strong> Tap <em>Share</em> &rarr; <em>&ldquo;Add to Home Screen&rdquo;</em>.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
               </div>
             </div>
           </section>

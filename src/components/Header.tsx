@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 interface HeaderProps {
@@ -39,19 +40,19 @@ export default function Header({ title, showBack = false, backHref }: HeaderProp
               ) : null}
             </div>
           ) : (
-            <Link href="/" className="flex items-center gap-2.5 sm:gap-3.5 group">
-              <div className="relative flex items-center justify-center">
-                <svg className="h-8 sm:h-9 w-auto object-contain text-primary group-hover:scale-105 transition-transform drop-shadow-[0_2px_8px_rgba(226,178,88,0.3)]" viewBox="0 0 160 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 8L28 8C36 8 40 12 40 18C40 22 37 24.5 33 26C38 27.5 42 30.5 42 36C42 42 36 46 27 46L12 46L12 8Z" stroke="#E2B258" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                  <path d="M12 26L26 26" stroke="#E2B258" strokeWidth="3" strokeLinecap="round"/>
-                  <polygon points="21,15 25,18 21,21" fill="#E2B258"/>
-                  <polygon points="21,33 25,36 21,39" fill="#E2B258"/>
-                  <text x="54" y="32" fontFamily="var(--font-syne), system-ui, sans-serif" fontWeight="800" fontSize="22" letterSpacing="4.5" fill="#FFFFFF">BOUNCE</text>
-                  <circle cx="150" cy="27" r="3" fill="#E2B258"/>
-                </svg>
+            <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group">
+              <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden border border-primary/40 shadow-[0_2px_12px_rgba(226,178,88,0.25)] shrink-0 bg-surface-container-lowest group-hover:border-primary transition-all">
+                <Image
+                  src="/icons/icon-192x192.png"
+                  alt="BOUNCE Mobile App Logo"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                  priority
+                />
               </div>
-              <div className="hidden md:flex flex-col">
-                <span className="font-headline-md text-headline-md text-primary tracking-tight leading-none uppercase font-bold">
+              <div className="flex flex-col">
+                <span className="font-headline-md text-base sm:text-lg text-primary tracking-tight leading-none uppercase font-bold">
                   BOUNCE
                 </span>
                 <span className="font-label-sm text-[10px] text-outline tracking-widest uppercase mt-0.5">

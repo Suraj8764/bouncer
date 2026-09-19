@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -12,17 +13,16 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg pb-space-lg border-b border-white/5">
           {/* Brand Info */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-space-md">
-            {/* SVG Tactical Shield Logo with subtle hover glow */}
-            <div className="flex items-center gap-space-sm group cursor-pointer">
-              <div className="relative">
-                <svg className="h-8 w-auto object-contain text-primary group-hover:drop-shadow-[0_0_12px_rgba(226,178,88,0.5)] transition-all" viewBox="0 0 160 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 8L28 8C36 8 40 12 40 18C40 22 37 24.5 33 26C38 27.5 42 30.5 42 36C42 42 36 46 27 46L12 46L12 8Z" stroke="#E2B258" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                  <path d="M12 26L26 26" stroke="#E2B258" strokeWidth="3" strokeLinecap="round"/>
-                  <polygon points="21,15 25,18 21,21" fill="#E2B258"/>
-                  <polygon points="21,33 25,36 21,39" fill="#E2B258"/>
-                  <text x="54" y="32" fontFamily="var(--font-syne), system-ui, sans-serif" fontWeight="800" fontSize="22" letterSpacing="4.5" fill="#FFFFFF">BOUNCE</text>
-                  <circle cx="150" cy="27" r="3" fill="#E2B258"/>
-                </svg>
+            {/* Tactical Shield Logo with subtle hover glow */}
+            <div className="flex items-center gap-3 group cursor-pointer">
+              <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-primary/40 shadow-[0_2px_12px_rgba(226,178,88,0.25)] shrink-0 bg-surface-container-lowest group-hover:border-primary transition-all">
+                <Image
+                  src="/icons/icon-192x192.png"
+                  alt="BOUNCE Mobile App Logo"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight uppercase">BOUNCE</span>
